@@ -45,7 +45,8 @@ export class ProjeComponent implements AfterViewInit, OnInit {
 
 
 	getProjeList() {
-		this.projeService.getProjeList().subscribe(data => {
+		this.projeService.getProjeList().subscribe(data => { 
+			console.log(data);
 			this.projeList = data;
 			this.dataSource = new MatTableDataSource(data);
             this.configDataTable();

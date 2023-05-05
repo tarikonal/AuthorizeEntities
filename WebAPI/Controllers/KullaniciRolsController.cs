@@ -13,7 +13,8 @@ namespace WebAPI.Controllers
     /// <summary>
     /// KullaniciRols If controller methods will not be Authorize, [AllowAnonymous] is used.
     /// </summary>
-    [Route("api/[controller]")]
+    [Route("api/v{version:apiVersion}/[controller]")]
+    //[Route("api/[controller]")]
     [ApiController]
     public class KullaniciRolsController : BaseApiController
     {

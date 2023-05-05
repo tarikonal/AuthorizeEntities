@@ -13,7 +13,8 @@ namespace WebAPI.Controllers
     /// <summary>
     /// Projes If controller methods will not be Authorize, [AllowAnonymous] is used.
     /// </summary>
-    [Route("api/[controller]")]
+    [Route("api/v{version:apiVersion}/[controller]")]
+    //[Route("api/[controller]")]
     [ApiController]
     public class ProjesController : BaseApiController
     {
@@ -26,7 +27,8 @@ namespace WebAPI.Controllers
         [Produces("application/json", "text/plain")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<Proje>))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(string))]
-        [HttpGet("getall")]
+        //[HttpGet("getall")]
+        [HttpGet]
         public async Task<IActionResult> GetList()
         {
             var result = await Mediator.Send(new GetProjesQuery());
