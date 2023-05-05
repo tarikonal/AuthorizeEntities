@@ -9,6 +9,7 @@ import { AuthService } from 'app/core/components/admin/login/services/auth.servi
 import { Proje } from './models/proje';
 import { ProjeService } from './services/proje.service';
 import { environment } from 'environments/environment';
+import { LookUp } from 'app/core/models/lookUp';
 
 declare var jQuery: any;
 
@@ -28,7 +29,7 @@ export class ProjeComponent implements AfterViewInit, OnInit {
 	proje:Proje=new Proje();
 
 	projeAddForm: FormGroup;
-
+	projelookUp: LookUp[];
 
 	projeId:number;
 
@@ -39,6 +40,10 @@ export class ProjeComponent implements AfterViewInit, OnInit {
     }
 
 	ngOnInit() {
+
+		this.lookupService.getProjeLookup().subscribe(data => {
+			this.projelookUp = data;
+		})
 
 		this.createProjeAddForm();
 	}
