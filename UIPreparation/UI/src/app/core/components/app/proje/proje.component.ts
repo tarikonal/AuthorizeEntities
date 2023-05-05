@@ -6,8 +6,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { AlertifyService } from 'app/core/services/alertify.service';
 import { LookUpService } from 'app/core/services/lookUp.service';
 import { AuthService } from 'app/core/components/admin/login/services/auth.service';
-import { Proje } from './models/Proje';
-import { ProjeService } from './services/Proje.service';
+import { Proje } from './models/proje';
+import { ProjeService } from './services/proje.service';
 import { environment } from 'environments/environment';
 
 declare var jQuery: any;
@@ -98,7 +98,7 @@ export class ProjeComponent implements AfterViewInit, OnInit {
 	createProjeAddForm() {
 		this.projeAddForm = this.formBuilder.group({		
 			id : [0],
-ustProjeId : [0, Validators.required],
+ustProjeId : [0],
 adi : ["", Validators.required],
 aciklama : ["", Validators.required],
 urlAdresi : ["", Validators.required],
